@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Date 2020/11/2
  */
 public class FairLock {
-    private static final  Logger logger = LoggerFactory.getLogger(FairLock.class);
+    private static final Logger logger = LoggerFactory.getLogger(FairLock.class);
 
     public static ReentrantLock noFairLock = new ReentrantLock();
 

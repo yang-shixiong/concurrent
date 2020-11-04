@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * Date 2020/11/3
  */
 public class NotExistLoop {
-    private static final  Logger logger = LoggerFactory.getLogger(NotExistLoop.class);
+    private static final Logger logger = LoggerFactory.getLogger(NotExistLoop.class);
 
     static boolean run = true;
 //    static volatile boolean run = true;
@@ -25,7 +25,7 @@ public class NotExistLoop {
             run = false;
             logger.debug("modify");
         }, "t1").start();
-        while (run){
+        while (run) {
 //            System.out.println(run);
         }
         logger.debug("end");

@@ -6,8 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.yang.util.Sleeper.sleep;
-
 /**
  * Description:
  *
@@ -15,9 +13,8 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/11/2
  */
 public class ReentrantLockDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(ReentrantLockDemo.class);
-
     static final ReentrantLock lock = new ReentrantLock();
+    private static final Logger logger = LoggerFactory.getLogger(ReentrantLockDemo.class);
 
     public static void main(String[] args) {
 //        method1();
@@ -39,7 +36,7 @@ public class ReentrantLockDemo {
             }
         });
         lock.lock();
-        try{
+        try {
             thread.start();
             try {
                 Thread.sleep(1000);
@@ -48,7 +45,7 @@ public class ReentrantLockDemo {
             }
             thread.interrupt();
             logger.debug("end");
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -96,11 +93,11 @@ public class ReentrantLockDemo {
     private static void method4() {
         Thread thread = Thread.currentThread();
         new Thread(() -> {
-            if(!lock.tryLock()){
+            if (!lock.tryLock()) {
                 logger.debug("try to interrupt...");
                 thread.interrupt();
                 try {
-                    if(!lock.tryLock(506, TimeUnit.MILLISECONDS)){
+                    if (!lock.tryLock(506, TimeUnit.MILLISECONDS)) {
                         logger.debug("not get the lock");
                         return;
                     }

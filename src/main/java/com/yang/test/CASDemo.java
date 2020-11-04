@@ -7,37 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Description:
- *
- * @author mark
- * Date 2020/11/3
- */
-public class CASDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(CASDemo.class);
-
-    public static void main(String[] args) {
-//        Account.demo(new AccountSafe(10000));
-//
-//        Account.demo(new AccountUnsafe(10000));
-//        Account.demo(new AccountSafe(10000));
-//        Account.demo(new AccountCAS(10000));
-
-        AtomicInteger atomicInteger = new AtomicInteger(100);
-        atomicInteger.getAndAccumulate(100, Integer::sum);
-        logger.debug("{}", atomicInteger.get());
-        int i = 0;
-        logger.debug("{}, i: {}", i == (i = 1), i);
-    }
-}
-
-
 interface Account {
     Logger logger = LoggerFactory.getLogger(Account.class);
-
-    Integer getBalance();
-
-    void withdraw(Integer amount);
 
     static void demo(Account account) {
         List<Thread> list = new ArrayList<>();
@@ -60,6 +31,34 @@ interface Account {
         //  [main] - balance: 0, use time:      76696201
         //  [main] - balance: 0, use time:      62596499
         logger.debug("balance: {}, use time: {}", account.getBalance(), end - start);
+    }
+
+    Integer getBalance();
+
+    void withdraw(Integer amount);
+}
+
+/**
+ * Description:
+ *
+ * @author mark
+ * Date 2020/11/3
+ */
+public class CASDemo {
+    private static final Logger logger = LoggerFactory.getLogger(CASDemo.class);
+
+    public static void main(String[] args) {
+//        Account.demo(new AccountSafe(10000));
+//
+//        Account.demo(new AccountUnsafe(10000));
+//        Account.demo(new AccountSafe(10000));
+//        Account.demo(new AccountCAS(10000));
+
+        AtomicInteger atomicInteger = new AtomicInteger(100);
+        atomicInteger.getAndAccumulate(100, Integer::sum);
+        logger.debug("{}", atomicInteger.get());
+        int i = 0;
+        logger.debug("{}, i: {}", i == (i = 1), i);
     }
 }
 

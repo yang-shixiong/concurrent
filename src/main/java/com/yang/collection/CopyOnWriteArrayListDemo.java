@@ -29,7 +29,7 @@ public class CopyOnWriteArrayListDemo {
             logger.debug("list: {}", list);
         }).start();
         sleep(1000);
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             logger.debug("{}", iterator.next());
         }
     }

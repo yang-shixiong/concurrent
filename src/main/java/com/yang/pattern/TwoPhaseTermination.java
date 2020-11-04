@@ -29,7 +29,7 @@ public class TwoPhaseTermination {
         flag = false;
     }
 
-    public static void isInterrupted(){
+    public static void isInterrupted() {
         monitor = new Thread(() -> {
             while (true) {
                 Thread thread = Thread.currentThread();
@@ -49,9 +49,9 @@ public class TwoPhaseTermination {
         monitor.start();
     }
 
-    public static void useFlag(){
+    public static void useFlag() {
         monitor2 = new Thread(() -> {
-            while (flag){
+            while (flag) {
                 Thread thread = Thread.currentThread();
                 try {
                     Thread.sleep(2000);

@@ -12,13 +12,11 @@ import java.util.concurrent.locks.LockSupport;
  * Date 2020/11/3
  */
 public class HappensBefore {
-    private static final  Logger logger = LoggerFactory.getLogger(HappensBefore.class);
-
     static final Object object = new Object();
-
+    private static final Logger logger = LoggerFactory.getLogger(HappensBefore.class);
     static int num;
 
-     static int x;
+    static int x;
 
     static int y;
 

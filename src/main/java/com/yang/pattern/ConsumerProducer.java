@@ -28,7 +28,7 @@ public class ConsumerProducer {
         }
 
         new Thread(() -> {
-            while (true){
+            while (true) {
                 Message take = messageQueue.take();
                 logger.debug("get message: {}, {}", take.getId(), take.getMessage());
             }

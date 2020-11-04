@@ -12,13 +12,12 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/11/2
  */
 public class TestWait {
-    private static final  Logger logger = LoggerFactory.getLogger(TestWait.class);
-
-    static final  Object obj = new Object();
+    static final Object obj = new Object();
+    private static final Logger logger = LoggerFactory.getLogger(TestWait.class);
 
     public static void main(String[] args) {
         new Thread(() -> {
-            synchronized(obj){
+            synchronized (obj) {
                 logger.debug("start...");
                 try {
                     obj.wait();
@@ -30,7 +29,7 @@ public class TestWait {
         }, "t1").start();
 
         new Thread(() -> {
-            synchronized(obj){
+            synchronized (obj) {
                 logger.debug("start...");
                 try {
                     obj.wait();
@@ -42,7 +41,7 @@ public class TestWait {
         }, "t2").start();
 
         sleep(1000);
-        synchronized (obj){
+        synchronized (obj) {
 //            obj.notify();
             obj.notifyAll();
         }

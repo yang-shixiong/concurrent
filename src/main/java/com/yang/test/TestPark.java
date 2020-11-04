@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
  * Date 2020/11/2
  */
 public class TestPark {
-    private static final  Logger logger = LoggerFactory.getLogger(TestPark.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestPark.class);
 
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {

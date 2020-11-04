@@ -10,14 +10,12 @@ import org.slf4j.LoggerFactory;
  * Date 2020/10/31
  */
 public class Conflict {
-    private static final  Logger logger = LoggerFactory.getLogger(Conflict.class);
-
+    public static final Object condition = new Object();
+    private static final Logger logger = LoggerFactory.getLogger(Conflict.class);
     public static int count;
     public static int count2;
     public static volatile int vv;
     public static volatile int vv2;
-
-    public static final Object condition = new Object();
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();

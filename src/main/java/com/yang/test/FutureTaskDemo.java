@@ -13,7 +13,7 @@ import java.util.concurrent.FutureTask;
  * Date 2020/10/31
  */
 public class FutureTaskDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(FutureTaskDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(FutureTaskDemo.class);
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         FutureTask<Integer> futureTask = new FutureTask<>(() -> {

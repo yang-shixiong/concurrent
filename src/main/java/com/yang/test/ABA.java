@@ -14,7 +14,7 @@ import java.util.concurrent.locks.LockSupport;
  * Date 2020/11/3
  */
 public class ABA {
-    private static final  Logger logger = LoggerFactory.getLogger(ABA.class);
+    private static final Logger logger = LoggerFactory.getLogger(ABA.class);
 
     static AtomicReference<String> ref = new AtomicReference<>("A");
     static AtomicStampedReference<String> ref2 = new AtomicStampedReference<>("A", 0);
@@ -63,7 +63,7 @@ public class ABA {
         }, "t2");
         t1.start();
         t2.start();
-        while (t1.isAlive()){
+        while (t1.isAlive()) {
             Thread.yield();
         }
         LockSupport.unpark(t2);

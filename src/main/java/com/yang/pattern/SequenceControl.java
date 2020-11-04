@@ -47,7 +47,7 @@ class SyncWaitNotify {
 
     private int flag;
 
-    private int loopNumber;
+    private final int loopNumber;
 
     public SyncWaitNotify(int flag, int loopNumber) {
         this.flag = flag;
@@ -130,7 +130,7 @@ class SyncPark {
         }
     }
 
-    public void start(){
+    public void start() {
         for (Thread thread : threads) {
             thread.start();
         }

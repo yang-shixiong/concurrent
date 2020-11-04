@@ -12,11 +12,9 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/11/2
  */
 public class LiveLock {
-    private static final  Logger logger = LoggerFactory.getLogger(LiveLock.class);
-
-    static int count = 10;
-
     static final Object object = new Object();
+    private static final Logger logger = LoggerFactory.getLogger(LiveLock.class);
+    static int count = 10;
 
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {

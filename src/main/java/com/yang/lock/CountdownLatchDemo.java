@@ -1,6 +1,5 @@
 package com.yang.lock;
 
-import com.yang.pool.ThreadPool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,12 +60,12 @@ class SyncThread {
 
     private final Random random = new Random();
 
-    public void test(){
+    public void test() {
         for (int i = 0; i < 10; i++) {
             int id = i;
             executorService.submit(() -> {
                 for (int j = 0; j < 101; j++) {
-                     sleep(random.nextInt(3) * 1000);
+                    sleep(random.nextInt(3) * 1000);
                     all[id] = Thread.currentThread().getName() + "(" + j + "%)";
                     System.out.print("\r" + Arrays.toString(all));
                 }

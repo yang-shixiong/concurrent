@@ -13,31 +13,30 @@ import java.io.Serializable;
  */
 
 public final class SingleTon implements Serializable {
-    private static final  Logger logger = LoggerFactory.getLogger(SingleTon.class);
+    private static final Logger logger = LoggerFactory.getLogger(SingleTon.class);
+    private static final SingleTon INSTANCE = new SingleTon();
 
     private SingleTon() {
     }
 
-    private static final SingleTon INSTANCE = new SingleTon();
-
     public static SingleTon getInstance() {
-        return INSTANCE;
-    }
-
-    public Object readResolve() {
         return INSTANCE;
     }
 
     public static void main(String[] args) {
         HungrySingleton2.getInstance();
     }
+
+    public Object readResolve() {
+        return INSTANCE;
+    }
 }
 
 final class HungrySingleton implements Serializable {
+    private static volatile HungrySingleton INSTANCE;
+
     private HungrySingleton() {
     }
-
-    private static volatile HungrySingleton INSTANCE;
 
     public static HungrySingleton getInstance() {
         if (INSTANCE != null) {
@@ -54,16 +53,16 @@ final class HungrySingleton implements Serializable {
 }
 
 final class HungrySingleton2 {
-    private HungrySingleton2() {
-    }
-
     private static volatile HungrySingleton2 INSTANCE;
 
-    private static class LazyHolder {
-        public static HungrySingleton2 INSTANCE = new HungrySingleton2();
+    private HungrySingleton2() {
     }
 
     public static HungrySingleton2 getInstance() {
         return LazyHolder.INSTANCE;
+    }
+
+    private static class LazyHolder {
+        public static HungrySingleton2 INSTANCE = new HungrySingleton2();
     }
 }

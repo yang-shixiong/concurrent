@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * Date 2020/10/31
  */
 public class PriorityDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(PriorityDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(PriorityDemo.class);
 
     static int count1;
     static int count2;

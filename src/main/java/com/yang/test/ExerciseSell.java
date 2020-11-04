@@ -15,12 +15,12 @@ import java.util.Vector;
  * Date 2020/11/2
  */
 public class ExerciseSell {
-    private static final  Logger logger = LoggerFactory.getLogger(ExerciseSell.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExerciseSell.class);
 
     static Random random = new Random();
 
-    public static int randomAmount(){
-        return random.nextInt(5) +1;
+    public static int randomAmount() {
+        return random.nextInt(5) + 1;
     }
 
     public static void main(String[] args) {
@@ -55,22 +55,22 @@ public class ExerciseSell {
     }
 }
 
-class TicketWindow{
+class TicketWindow {
     public int count;
 
     public TicketWindow(int count) {
         this.count = count;
     }
 
-    public int getCount(){
+    public int getCount() {
         return count;
     }
 
-    public int sell(int amount){
-        if(count >= amount){
+    public int sell(int amount) {
+        if (count >= amount) {
             this.count -= amount;
             return amount;
-        }else {
+        } else {
             int count = this.count;
             this.count = 0;
             return count;

@@ -14,7 +14,7 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/10/31
  */
 public class Park {
-    private static final  Logger logger = LoggerFactory.getLogger(Park.class);
+    private static final Logger logger = LoggerFactory.getLogger(Park.class);
 
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {

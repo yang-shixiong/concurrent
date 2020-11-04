@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Date 2020/10/31
  */
 public class ThreadUnSafe {
-    private static final  Logger logger = LoggerFactory.getLogger(ThreadUnSafe.class);
+    private static final Logger logger = LoggerFactory.getLogger(ThreadUnSafe.class);
 
     static ArrayList<String> list = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class ThreadUnSafe {
         }
     }
 
-    public void method1(int loopNumber){
+    public void method1(int loopNumber) {
 //        ArrayList<String> list = new ArrayList<>();
 
         for (int i = 0; i < loopNumber; i++) {
@@ -33,11 +33,11 @@ public class ThreadUnSafe {
         }
     }
 
-    public void method2(ArrayList<String> list){
+    public void method2(ArrayList<String> list) {
         list.add("1");
     }
 
-    public void method3(ArrayList<String> list){
+    public void method3(ArrayList<String> list) {
         list.remove(0);
     }
 }

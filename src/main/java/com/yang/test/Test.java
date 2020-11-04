@@ -14,13 +14,13 @@ import java.text.SimpleDateFormat;
  */
 
 public abstract class Test {
-    private static final  Logger logger = LoggerFactory.getLogger(Test.class);
+    private static final Logger logger = LoggerFactory.getLogger(Test.class);
 
     public static void main(String[] args) {
         new Tests().bar();
     }
 
-    public void bar(){
+    public void bar() {
         SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
         foo(format);
     }
@@ -28,12 +28,12 @@ public abstract class Test {
     protected abstract void foo(SimpleDateFormat format);
 }
 
-class Tests extends Test{
+class Tests extends Test {
     @Override
     protected void foo(SimpleDateFormat format) {
         String dateStr = "1990-10-11 00:00:00";
         for (int i = 0; i < 20; i++) {
-            new Thread(()->{
+            new Thread(() -> {
                 try {
                     format.parse(dateStr);
                 } catch (ParseException e) {

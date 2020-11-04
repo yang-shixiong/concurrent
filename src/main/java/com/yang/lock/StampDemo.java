@@ -14,7 +14,7 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/11/4
  */
 public class StampDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(StampDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(StampDemo.class);
 
     public static void main(String[] args) {
         DataCenterStamp dataCenterStamp = new DataCenterStamp(1);
@@ -31,11 +31,9 @@ public class StampDemo {
 }
 
 class DataCenterStamp {
-    private static final  Logger logger = LoggerFactory.getLogger(DataCenterStamp.class);
-
-    private int data;
-
+    private static final Logger logger = LoggerFactory.getLogger(DataCenterStamp.class);
     private final StampedLock lock = new StampedLock();
+    private int data;
 
     public DataCenterStamp(int data) {
         this.data = data;

@@ -14,12 +14,12 @@ public class Balking {
 
     public static Balking INSTANCE;
 
-    public static Balking getInstance(){
-        if(INSTANCE != null){
+    public static Balking getInstance() {
+        if (INSTANCE != null) {
             return INSTANCE;
         }
-        synchronized(Balking.class){
-            if(INSTANCE != null){
+        synchronized (Balking.class) {
+            if (INSTANCE != null) {
                 return INSTANCE;
             }
             INSTANCE = new Balking();

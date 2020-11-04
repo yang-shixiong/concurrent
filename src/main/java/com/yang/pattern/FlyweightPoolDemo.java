@@ -50,16 +50,16 @@ class FlyweightPool {
         }
     }
 
-    public Connection borrow(){
-        while (true){
+    public Connection borrow() {
+        while (true) {
             for (int i = 0; i < this.connections.length; i++) {
-                if(status.get(i) == 0){
-                    if(status.compareAndSet(i, 0,1)){
+                if (status.get(i) == 0) {
+                    if (status.compareAndSet(i, 0, 1)) {
                         return connections[i];
                     }
                 }
             }
-            synchronized (this){
+            synchronized (this) {
                 logger.debug("wait...");
                 try {
                     this.wait();
@@ -70,11 +70,11 @@ class FlyweightPool {
         }
     }
 
-    public void free(Connection conn){
+    public void free(Connection conn) {
         for (int i = 0; i < this.connections.length; i++) {
-            if(connections[i] == conn){
+            if (connections[i] == conn) {
                 status.set(i, 0);
-                synchronized (this){
+                synchronized (this) {
                     logger.debug("free: {}", conn);
                     this.notifyAll();
                 }
@@ -113,13 +113,13 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setAutoCommit(boolean autoCommit) throws SQLException {
-
+    public boolean getAutoCommit() throws SQLException {
+        return false;
     }
 
     @Override
-    public boolean getAutoCommit() throws SQLException {
-        return false;
+    public void setAutoCommit(boolean autoCommit) throws SQLException {
+
     }
 
     @Override
@@ -148,17 +148,12 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setReadOnly(boolean readOnly) throws SQLException {
-
-    }
-
-    @Override
     public boolean isReadOnly() throws SQLException {
         return false;
     }
 
     @Override
-    public void setCatalog(String catalog) throws SQLException {
+    public void setReadOnly(boolean readOnly) throws SQLException {
 
     }
 
@@ -168,13 +163,18 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setTransactionIsolation(int level) throws SQLException {
+    public void setCatalog(String catalog) throws SQLException {
 
     }
 
     @Override
     public int getTransactionIsolation() throws SQLException {
         return 0;
+    }
+
+    @Override
+    public void setTransactionIsolation(int level) throws SQLException {
+
     }
 
     @Override
@@ -213,13 +213,13 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setHoldability(int holdability) throws SQLException {
-
+    public int getHoldability() throws SQLException {
+        return 0;
     }
 
     @Override
-    public int getHoldability() throws SQLException {
-        return 0;
+    public void setHoldability(int holdability) throws SQLException {
+
     }
 
     @Override
@@ -303,11 +303,6 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setClientInfo(Properties properties) throws SQLClientInfoException {
-
-    }
-
-    @Override
     public String getClientInfo(String name) throws SQLException {
         return null;
     }
@@ -315,6 +310,11 @@ class MockConnection implements Connection {
     @Override
     public Properties getClientInfo() throws SQLException {
         return null;
+    }
+
+    @Override
+    public void setClientInfo(Properties properties) throws SQLClientInfoException {
+
     }
 
     @Override
@@ -328,13 +328,13 @@ class MockConnection implements Connection {
     }
 
     @Override
-    public void setSchema(String schema) throws SQLException {
-
+    public String getSchema() throws SQLException {
+        return null;
     }
 
     @Override
-    public String getSchema() throws SQLException {
-        return null;
+    public void setSchema(String schema) throws SQLException {
+
     }
 
     @Override

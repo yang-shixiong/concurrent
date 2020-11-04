@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.function.Consumer;
@@ -18,7 +17,7 @@ import java.util.function.Supplier;
  * Date 2020/11/3
  */
 public class AtomicAdder {
-    private static final  Logger logger = LoggerFactory.getLogger(AtomicAdder.class);
+    private static final Logger logger = LoggerFactory.getLogger(AtomicAdder.class);
 
     public static void main(String[] args) {
         for (int i = 0; i < 4; i++) {
@@ -30,7 +29,7 @@ public class AtomicAdder {
         }
     }
 
-    public static <T> void demo(Supplier<T> supplier, Consumer<T> consumer){
+    public static <T> void demo(Supplier<T> supplier, Consumer<T> consumer) {
         T addr = supplier.get();
         List<Thread> list = new ArrayList<>();
         long l = System.currentTimeMillis();

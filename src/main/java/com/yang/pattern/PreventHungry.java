@@ -3,7 +3,6 @@ package com.yang.pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -14,8 +13,9 @@ import java.util.concurrent.Future;
 
 /**
  * Description:
- *
+ * <p>
  * 不同的线程做不同的事
+ *
  * @author mark
  * Date 2020/11/4
  */
@@ -26,7 +26,7 @@ public class PreventHungry {
 
     private static final Random random = new Random();
 
-    public static String cooking(){
+    public static String cooking() {
         return MENU.get(random.nextInt(MENU.size()));
     }
 

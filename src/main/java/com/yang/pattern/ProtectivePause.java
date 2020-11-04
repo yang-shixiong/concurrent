@@ -84,6 +84,7 @@ class MailBoxes {
 
 class GuardedObject {
     private final int id;
+    private Object response;
 
     public GuardedObject(int id) {
         this.id = id;
@@ -92,8 +93,6 @@ class GuardedObject {
     public int getId() {
         return id;
     }
-
-    private Object response;
 
     public Object get(long time) {
         synchronized (this) {

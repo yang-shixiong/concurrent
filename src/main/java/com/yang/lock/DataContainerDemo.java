@@ -14,7 +14,7 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/11/4
  */
 public class DataContainerDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(DataContainerDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(DataContainerDemo.class);
 
 
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class DataContainerDemo {
 }
 
 class DataContainer {
-    private static final  Logger logger = LoggerFactory.getLogger(DataContainer.class);
+    private static final Logger logger = LoggerFactory.getLogger(DataContainer.class);
 
     private final ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
 
@@ -78,10 +78,10 @@ class DataContainer {
             logger.debug("start write");
             i += value;
             r.lock();
-            try{
+            try {
                 sleep(2000);
                 return i;
-            }finally {
+            } finally {
                 r.unlock();
             }
         } finally {

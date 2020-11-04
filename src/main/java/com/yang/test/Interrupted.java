@@ -12,7 +12,7 @@ import static com.yang.util.Sleeper.sleep;
  * Date 2020/10/31
  */
 public class Interrupted {
-    private static final  Logger logger = LoggerFactory.getLogger(Interrupted.class);
+    private static final Logger logger = LoggerFactory.getLogger(Interrupted.class);
 
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {

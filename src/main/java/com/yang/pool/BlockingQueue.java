@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Date 2020/11/4
  */
 public class BlockingQueue<T> {
-    private static final  Logger logger = LoggerFactory.getLogger(BlockingQueue.class);
+    private static final Logger logger = LoggerFactory.getLogger(BlockingQueue.class);
 
     /**
      * 任务队列

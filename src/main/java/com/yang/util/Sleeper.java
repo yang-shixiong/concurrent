@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
  * Date 2020/10/31
  */
 public class Sleeper {
-    private static final  Logger logger = LoggerFactory.getLogger(Sleeper.class);
+    private static final Logger logger = LoggerFactory.getLogger(Sleeper.class);
 
-    public static void sleep(long millis){
+    public static void sleep(long millis) {
         try {
             TimeUnit.MILLISECONDS.sleep(millis);
         } catch (InterruptedException e) {

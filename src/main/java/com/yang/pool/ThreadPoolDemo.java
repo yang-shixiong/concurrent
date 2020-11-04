@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Date 2020/11/4
  */
 public class ThreadPoolDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(ThreadPoolDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(ThreadPoolDemo.class);
 
     public static void main(String[] args) {
 //        ExecutorService executorService = Executors.newCachedThreadPool(new Factory());
@@ -33,7 +33,6 @@ public class ThreadPoolDemo {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 1,
                 TimeUnit.MINUTES, new SynchronousQueue<>(), new Factory(), (r, executor) -> Thread.dumpStack());
         try {
-
 
 
             logger.debug("-------------------------------------------");

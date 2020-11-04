@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * Date 2020/10/31
  */
 public class Join {
-    private static final  Logger logger = LoggerFactory.getLogger(Join.class);
+    private static final Logger logger = LoggerFactory.getLogger(Join.class);
 
     static int num;
 

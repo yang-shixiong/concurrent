@@ -13,37 +13,31 @@ import java.util.concurrent.TimeUnit;
  * Date 2020/11/4
  */
 public class ThreadPool {
-    private static final  Logger logger = LoggerFactory.getLogger(ThreadPool.class);
-
-    /**
-     * 超时时间
-     */
-    private long timeout;
-
-    /**
-     * 超时时间单位
-     */
-    private TimeUnit timeUnit;
-
-    /**
-     * 拒绝策略
-     */
-    private RejectPolicy<Runnable> rejectPolicy;
-
+    private static final Logger logger = LoggerFactory.getLogger(ThreadPool.class);
     /**
      * 任务队列
      */
     private final BlockingQueue<Runnable> queue;
-
     /**
      * 工作线程集合
      */
     private final HashSet<Worker> workers = new HashSet<>();
-
     /**
      * 核心线程数量
      */
     private final int coreSize;
+    /**
+     * 超时时间
+     */
+    private long timeout;
+    /**
+     * 超时时间单位
+     */
+    private TimeUnit timeUnit;
+    /**
+     * 拒绝策略
+     */
+    private RejectPolicy<Runnable> rejectPolicy;
 
     /**
      * 线程构造函数，调用队列的take以及put方法

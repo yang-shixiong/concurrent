@@ -15,7 +15,7 @@ import java.util.List;
  * Date 2020/11/4
  */
 public class AtomicDataDemo {
-    private static final  Logger logger = LoggerFactory.getLogger(AtomicDataDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(AtomicDataDemo.class);
 
     public static void main(String[] args) {
         AtomicData atomicData = new AtomicData(10000);
@@ -37,11 +37,8 @@ public class AtomicDataDemo {
     }
 }
 
-class AtomicData{
-    private volatile int data;
-
+class AtomicData {
     static final Unsafe unsafe;
-
     static final long DATA_OFFSET;
 
     static {
@@ -54,14 +51,16 @@ class AtomicData{
         }
     }
 
+    private final int data;
+
     public AtomicData(int data) {
         this.data = data;
     }
 
-    public void decrease(int amount){
+    public void decrease(int amount) {
 //        data -= amount;
-        while (true){
-            if(unsafe.compareAndSwapInt(this, DATA_OFFSET, data, data-amount)){
+        while (true) {
+            if (unsafe.compareAndSwapInt(this, DATA_OFFSET, data, data - amount)) {
                 break;
             }
         }
@@ -72,7 +71,7 @@ class AtomicData{
     }
 }
 
-class UnsafeAccessor{
+class UnsafeAccessor {
     private static Unsafe unsafe;
 
     static {
