@@ -11,9 +11,8 @@ import java.util.concurrent.locks.LockSupport;
  * @author mark
  * Date 2020/11/3
  */
-
 public class HappensBefore {
-    private final static Logger logger = LoggerFactory.getLogger(HappensBefore.class);
+    private static final  Logger logger = LoggerFactory.getLogger(HappensBefore.class);
 
     static final Object object = new Object();
 

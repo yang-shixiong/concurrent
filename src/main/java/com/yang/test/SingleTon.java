@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 
 public final class SingleTon implements Serializable {
-    private final static Logger logger = LoggerFactory.getLogger(SingleTon.class);
+    private static final  Logger logger = LoggerFactory.getLogger(SingleTon.class);
 
     private SingleTon() {
     }

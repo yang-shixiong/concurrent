@@ -17,9 +17,8 @@ import java.util.function.Supplier;
  * @author mark
  * Date 2020/11/3
  */
-
 public class AtomicAdder {
-    private final static Logger logger = LoggerFactory.getLogger(AtomicAdder.class);
+    private static final  Logger logger = LoggerFactory.getLogger(AtomicAdder.class);
 
     public static void main(String[] args) {
         for (int i = 0; i < 4; i++) {

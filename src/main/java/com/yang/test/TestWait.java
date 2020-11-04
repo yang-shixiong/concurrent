@@ -11,11 +11,10 @@ import static com.yang.util.Sleeper.sleep;
  * @author mark
  * Date 2020/11/2
  */
-
 public class TestWait {
-    private final static Logger logger = LoggerFactory.getLogger(TestWait.class);
+    private static final  Logger logger = LoggerFactory.getLogger(TestWait.class);
 
-    final static Object obj = new Object();
+    static final  Object obj = new Object();
 
     public static void main(String[] args) {
         new Thread(() -> {

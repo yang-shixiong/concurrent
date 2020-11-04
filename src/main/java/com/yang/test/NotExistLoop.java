@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
  * @author mark
  * Date 2020/11/3
  */
-
 public class NotExistLoop {
-    private final static Logger logger = LoggerFactory.getLogger(NotExistLoop.class);
+    private static final  Logger logger = LoggerFactory.getLogger(NotExistLoop.class);
 
     static boolean run = true;
 //    static volatile boolean run = true;

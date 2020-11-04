@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
  * @author mark
  * Date 2020/10/31
  */
-
 public class Conflict {
-    private final static Logger logger = LoggerFactory.getLogger(Conflict.class);
+    private static final  Logger logger = LoggerFactory.getLogger(Conflict.class);
 
     public static int count;
     public static int count2;

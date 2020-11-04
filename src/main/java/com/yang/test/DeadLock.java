@@ -11,9 +11,8 @@ import static com.yang.util.Sleeper.sleep;
  * @author mark
  * Date 2020/11/2
  */
-
 public class DeadLock {
-    private final static Logger logger = LoggerFactory.getLogger(DeadLock.class);
+    private static final  Logger logger = LoggerFactory.getLogger(DeadLock.class);
 
     public static final Object objA = new Object();
 

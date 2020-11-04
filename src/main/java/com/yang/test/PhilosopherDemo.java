@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
  * @author mark
  * Date 2020/11/2
  */
-
 public class PhilosopherDemo {
-    private final static Logger logger = LoggerFactory.getLogger(PhilosopherDemo.class);
+    private static final  Logger logger = LoggerFactory.getLogger(PhilosopherDemo.class);
 
     public static void main(String[] args) {
         Chopstick c1 = new Chopstick("1");
@@ -45,7 +44,7 @@ class Chopstick {
 }
 
 class Philosopher extends Thread {
-    private final static Logger logger = LoggerFactory.getLogger(Philosopher.class);
+    private static final  Logger logger = LoggerFactory.getLogger(Philosopher.class);
     final Chopstick left;
 
     final Chopstick right;

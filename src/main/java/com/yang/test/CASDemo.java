@@ -13,9 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author mark
  * Date 2020/11/3
  */
-
 public class CASDemo {
-    private final static Logger logger = LoggerFactory.getLogger(CASDemo.class);
+    private static final  Logger logger = LoggerFactory.getLogger(CASDemo.class);
 
     public static void main(String[] args) {
 //        Account.demo(new AccountSafe(10000));

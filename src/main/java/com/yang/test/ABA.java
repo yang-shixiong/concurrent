@@ -13,9 +13,8 @@ import java.util.concurrent.locks.LockSupport;
  * @author mark
  * Date 2020/11/3
  */
-
 public class ABA {
-    private final static Logger logger = LoggerFactory.getLogger(ABA.class);
+    private static final  Logger logger = LoggerFactory.getLogger(ABA.class);
 
     static AtomicReference<String> ref = new AtomicReference<>("A");
     static AtomicStampedReference<String> ref2 = new AtomicStampedReference<>("A", 0);

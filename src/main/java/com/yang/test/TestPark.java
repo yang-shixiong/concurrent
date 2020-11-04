@@ -11,9 +11,8 @@ import java.util.concurrent.locks.LockSupport;
  * @author mark
  * Date 2020/11/2
  */
-
 public class TestPark {
-    private final static Logger logger = LoggerFactory.getLogger(TestPark.class);
+    private static final  Logger logger = LoggerFactory.getLogger(TestPark.class);
 
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {

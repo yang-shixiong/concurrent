@@ -11,9 +11,8 @@ import java.util.concurrent.TimeUnit;
  * @author mark
  * Date 2020/10/31
  */
-
 public class Sleeper {
-    private final static Logger logger = LoggerFactory.getLogger(Sleeper.class);
+    private static final  Logger logger = LoggerFactory.getLogger(Sleeper.class);
 
     public static void sleep(long millis){
         try {

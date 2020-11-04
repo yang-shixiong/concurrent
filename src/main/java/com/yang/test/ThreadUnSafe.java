@@ -11,9 +11,8 @@ import java.util.ArrayList;
  * @author mark
  * Date 2020/10/31
  */
-
 public class ThreadUnSafe {
-    private final static Logger logger = LoggerFactory.getLogger(ThreadUnSafe.class);
+    private static final  Logger logger = LoggerFactory.getLogger(ThreadUnSafe.class);
 
     static ArrayList<String> list = new ArrayList<>();
 

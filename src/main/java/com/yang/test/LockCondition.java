@@ -13,9 +13,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author mark
  * Date 2020/11/2
  */
-
 public class LockCondition {
-    private final static Logger logger = LoggerFactory.getLogger(LockCondition.class);
+    private static final  Logger logger = LoggerFactory.getLogger(LockCondition.class);
 
     static ReentrantLock lock = new ReentrantLock();
 

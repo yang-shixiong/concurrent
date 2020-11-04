@@ -11,9 +11,8 @@ import static com.yang.util.Sleeper.sleep;
  * @author mark
  * Date 2020/10/31
  */
-
 public class LockDemo {
-    private final static Logger logger = LoggerFactory.getLogger(LockDemo.class);
+    private static final  Logger logger = LoggerFactory.getLogger(LockDemo.class);
 
     public static void main(String[] args) {
         lock();
@@ -28,7 +27,7 @@ public class LockDemo {
 }
 
 class Number{
-    private final static Logger logger = LoggerFactory.getLogger(LockDemo.class);
+    private static final  Logger logger = LoggerFactory.getLogger(LockDemo.class);
 
     public synchronized void a(){
         sleep(1000);

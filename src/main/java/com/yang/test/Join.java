@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
  * @author mark
  * Date 2020/10/31
  */
-
 public class Join {
-    private final static Logger logger = LoggerFactory.getLogger(Join.class);
+    private static final  Logger logger = LoggerFactory.getLogger(Join.class);
 
     static int num;
 

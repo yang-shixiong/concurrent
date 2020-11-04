@@ -4,7 +4,15 @@ plugins {
 
 group 'com.yang'
 version '1.0-SNAPSHOT'
-
+compileJava {
+    dependsOn clean
+    options.encoding = "UTF-8"
+    options.compilerArgs << "-s"
+    options.compilerArgs << "$projectDir/generated/main/java"
+    doFirst {
+        file(new File(projectDir, "/generated/main/java")).mkdirs()
+    }
+}
 repositories {
     mavenCentral()
 }

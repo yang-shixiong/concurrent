@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  */
 
 public abstract class Test {
-    private final static Logger logger = LoggerFactory.getLogger(Test.class);
+    private static final  Logger logger = LoggerFactory.getLogger(Test.class);
 
     public static void main(String[] args) {
         new Tests().bar();

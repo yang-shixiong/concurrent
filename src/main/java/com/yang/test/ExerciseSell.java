@@ -14,9 +14,8 @@ import java.util.Vector;
  * @author mark
  * Date 2020/11/2
  */
-
 public class ExerciseSell {
-    private final static Logger logger = LoggerFactory.getLogger(ExerciseSell.class);
+    private static final  Logger logger = LoggerFactory.getLogger(ExerciseSell.class);
 
     static Random random = new Random();
 

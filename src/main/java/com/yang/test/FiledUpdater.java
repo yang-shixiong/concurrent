@@ -11,9 +11,8 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
  * @author mark
  * Date 2020/11/3
  */
-
 public class FiledUpdater {
-    private final static Logger logger = LoggerFactory.getLogger(FiledUpdater.class);
+    private static final  Logger logger = LoggerFactory.getLogger(FiledUpdater.class);
 
     private volatile int field = 5;
 

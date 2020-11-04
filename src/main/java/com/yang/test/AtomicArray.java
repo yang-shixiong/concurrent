@@ -18,9 +18,8 @@ import java.util.function.Supplier;
  * @author mark
  * Date 2020/11/3
  */
-
 public class AtomicArray {
-    private final static Logger logger = LoggerFactory.getLogger(AtomicArray.class);
+    private static final  Logger logger = LoggerFactory.getLogger(AtomicArray.class);
 
     public static void main(String[] args) {
         demo(() -> new int[10], (arr) -> arr.length, (arr, index) -> arr[index]++,

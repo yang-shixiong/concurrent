@@ -14,9 +14,8 @@ import static com.yang.util.Sleeper.sleep;
  * @author mark
  * Date 2020/11/2
  */
-
 public class ReentrantLockDemo {
-    private final static Logger logger = LoggerFactory.getLogger(ReentrantLockDemo.class);
+    private static final  Logger logger = LoggerFactory.getLogger(ReentrantLockDemo.class);
 
     static final ReentrantLock lock = new ReentrantLock();
 
